@@ -138,7 +138,14 @@ Las variables que son declaradas con `const` son, como su nombre lo indica, **va
 ## *Scope* de  `const`
 Las variables `const` coparten varias características con las variables `let`. Una de ellas es que ambas tienen de *scope* el bloque (`{}`) en el que fueron declaradas.
 
-{{inserta ejemplo}}
+```javascript
+if (true)
+{
+    const hola = "hola";
+    console.log(hola);
+}
+console.log(hola); //error
+```
 
 ## Declaración y asignación de valores
 Al igual que las variables `let`, las variables `const` no pueden ser redeclaradas; sin embargo, a estas **tampoco** se les puede asignar otro valor. Esto quiere decir que tanto:
