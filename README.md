@@ -35,8 +35,8 @@ function miFuncion() {
     var hola = "hola";
 }
 
-console.log(saludo)
-console.log(hola)
+console.log(saludo);
+console.log(hola);
 ```
 En este caso, el *scope* de la variable `saludo`, es global, mientras que el de la variable `hola` está restringido a la función `miFuncion()`. De esta manera, solo `console.log(saludo)` será ejecutado sin problemas, mientras que `console.log(hola)` nos dará error porque `hola` no está declarado en ese *scope*.
 
@@ -98,13 +98,13 @@ En el ejemplo, todo lo que está entre `{}` es el *scope* de la variable `hola`,
 Al igual que `var`, las variables `let` pueden ser **asignadas otro valor**; sin embargo, **no** pueden ser **redeclaradas** en el mismo *scope*.
 Esto quiere decir que esto es válido:
 ```javascript
-let hola = "hola"
-hola = "buenos dias"
+let hola = "hola";
+hola = "buenos dias";
 ```
 mientras que esto, **no**:
 ```javascript
-let hola = "hola"
-let hola = "buenos dias"
+let hola = "hola";
+let hola = "buenos dias";
 ```
 
 Declarar una variable `let` con el mismo nombre en diferentes *scopes* no dará ningún error. Por ejemplo:
@@ -141,27 +141,27 @@ Las variables `const` coparten varias características con las variables `let`. 
 {{inserta ejemplo}}
 
 ## Declaración y asignación de valores
-Al igual que las variables `let`, las variables `const` no pueden ser asignarles otro valor; sin embargo, estas **tampoco** pueden ser redeclaradas. Esto quiere decir que tanto:
+Al igual que las variables `let`, las variables `const` no pueden ser redeclaradas; sin embargo, a estas **tampoco** se les puede asignar otro valor. Esto quiere decir que tanto:
 ```javascript
-const hola = "hola"
-hola = "buenos dias"
+const hola = "hola";
+hola = "buenos dias";
 ```
 como esto:
 ```javascript
-const hola = "hola"
-const hola = "buenos dias"
+const hola = "hola";
+const hola = "buenos dias";
 ```
-es inválido y dá error.
+son inválidos.
 
 Es importante mencionar que, por este motivo, las variables `const` deben ser inicializadas **al momento de ser declaradas**.
 
 ## *Hoisting* de `const`
-Otra similitud con las variables `let` es el hecho de que las variables `const` se declaran al inicio de su *scope* pero no se inicializan
+Otra similitud con las variables `let` es el hecho de que las variables `const` se declaran al inicio de su *scope* pero no se inicializan.
 
 # Resumen de las diferencias
 
 |                          | `var`                           | `let`              | `const`                             |
 |--------------------------|---------------------------------|--------------------|-------------------------------------|
 | *Scope*                  | Global o en una función         | En bloques         | En bloques                          |
-| Asignación de valores y declaración | Se puede  asignar otro valor y redeclarar | Se puede  asignar otro valor | No se puede  asignar otro valor ni redeclarar |
+| Declaración y asignación de valores | Se puede redeclarar y asignar otro valor | Se le puede asignar otro valor | No se puede redeclarar ni asignar otro valor |
 | *Hoisting*               | Se inicializa con `undefined`   | No se inicializa   | No se inicializa                    |
